@@ -5,7 +5,8 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "spell-check": "cspell apps/**/*.{vue,js,ts} -e src/assets/font/**"
   },
   "devDependencies": {
     "cspell": "^8.12.1",
