@@ -5,7 +5,7 @@
 
 <template>
     <div>
-        我是自
+        ActionsPage
     </div>
 </template>
 

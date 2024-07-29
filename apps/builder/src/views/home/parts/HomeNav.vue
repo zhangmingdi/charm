@@ -89,7 +89,7 @@ const Icon = defineComponent({
                 v-for="item in linkItems"
                 :key="item.value"
                 :style="activeLink === item.value && { background: item.bg }"
-                :to="`/app/${item.value}`"
+                :to="`/${item.value}`"
             >
                 <div
                     :style="{

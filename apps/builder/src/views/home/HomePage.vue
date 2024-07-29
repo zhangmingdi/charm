@@ -10,8 +10,8 @@ import { RouterView } from 'vue-router'
         <header>
             <HomeNav />
         </header>
-        <main>
-            <RouterView/>
+        <main class="main-content">
+            <RouterView />
         </main>
     </div>
 </template>
