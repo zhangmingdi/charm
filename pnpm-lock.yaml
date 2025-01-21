@@ -29,6 +29,9 @@ importers:
       pinia:
         specifier: ^2.1.7
         version: 2.2.0(typescript@5.4.5)(vue@3.4.34(typescript@5.4.5))
+      smooth-dnd:
+        specifier: 0.12.1
+        version: 0.12.1
       vue:
         specifier: ^3.4.29
         version: 3.4.34(typescript@5.4.5)
@@ -3916,6 +3919,9 @@ packages:
   smart-buffer@4.2.0:
     resolution: {integrity: sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==}
     engines: {node: '>= 6.0.0', npm: '>= 3.0.0'}
+
+  smooth-dnd@0.12.1:
+    resolution: {integrity: sha512-Dndj/MOG7VP83mvzfGCLGzV2HuK1lWachMtWl/Iuk6zV7noDycIBnflwaPuDzoaapEl3Pc4+ybJArkkx9sxPZg==}
 
   snake-case@2.1.0:
     resolution: {integrity: sha512-FMR5YoPFwOLuh4rRz92dywJjyKYZNLpMn1R5ujVpIYkbA9p01fq8RMg0FkO4M+Yobt4MjHeLTJVm5xFFBHSV2Q==}
@@ -8867,6 +8873,8 @@ snapshots:
   slash@4.0.0: {}
 
   smart-buffer@4.2.0: {}
+
+  smooth-dnd@0.12.1: {}
 
   snake-case@2.1.0:
     dependencies:
