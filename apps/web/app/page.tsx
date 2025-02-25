@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Button } from "@repo/ui/button";
 import styles from "./page.module.css";
-
+   
 export default function Home() {
   return (
     <div className={styles.page}>
@@ -12,7 +12,7 @@ export default function Home() {
           alt="Next.js logo"
           width={180}
           height={38}
-          priority
+          priority 
         />
         <ol>
           <li>
