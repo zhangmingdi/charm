@@ -12,7 +12,12 @@
     "cspell": "^8.12.1",
     "prettier": "^3.2.5",
     "turbo": "^2.0.9",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "@repo/eslint-config": "workspace:*",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.5",
+    "@eslint/eslintrc": "^3",
+    "eslint-config-prettier": "^9.1.0"
   },
   "packageManager": "pnpm@8.15.6",
   "engines": {

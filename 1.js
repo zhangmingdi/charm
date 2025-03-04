@@ -22,7 +22,7 @@ var lowestCommonAncestor = function(root, p, q) {
     let target 
     function dfs(node){
         if(!node) return false
-        const leftBool = dfs(node.left)
+        const leftBool = dfs(node.left) 
         const rightBool = dfs(node.right)
         if(leftBool&&rightBool){
             target = node
