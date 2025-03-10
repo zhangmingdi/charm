@@ -1,9 +1,5 @@
 import config from "@repo/eslint-config/next.js";
 
+const eslintConfig = [...config];
 
-const eslintConfig = [
-  ...config
-];
-
-export default eslintConfig; 
-
+export default eslintConfig;

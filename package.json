@@ -9,15 +9,16 @@
     "spell-check": "cspell apps/**/*.{vue,js,ts} -e src/assets/font/**"
   },
   "devDependencies": {
-    "cspell": "^8.12.1",
-    "prettier": "^3.2.5",
-    "turbo": "^2.0.9",
-    "typescript": "^5.4.5",
+    "@eslint/eslintrc": "^3",
     "@repo/eslint-config": "workspace:*",
+    "cspell": "^8.12.1",
     "eslint": "^9",
     "eslint-config-next": "15.1.5",
-    "@eslint/eslintrc": "^3",
-    "eslint-config-prettier": "^9.1.0"
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.2.5",
+    "turbo": "^2.0.9",
+    "typescript": "^5.4.5"
   },
   "packageManager": "pnpm@8.15.6",
   "engines": {
