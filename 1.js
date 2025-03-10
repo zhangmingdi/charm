@@ -13,7 +13,7 @@
  const node = new TreeNode(1)
  node.left = new TreeNode(2)
 /**
- * @param {TreeNode} root
+ * @param {TreeNode} root 
  * @param {TreeNode} p
  * @param {TreeNode} q
  * @return {TreeNode}
