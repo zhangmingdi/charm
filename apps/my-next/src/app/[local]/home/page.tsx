@@ -3,8 +3,8 @@ import {useTranslations} from 'next-intl';
 export default function Home() {
   const t = useTranslations('HomePage');
 
-    return <>
+    return <div className='font-bold'>
       {t('title')}
     21312
-    </>
+    </div>
 }
