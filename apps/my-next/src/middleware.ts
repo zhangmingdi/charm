@@ -2,7 +2,7 @@ import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 
 import { clerkMiddleware } from "@clerk/nextjs/server";
-// const clerkMiddleware = clerkMiddleware();
+const clerkMiddlewareFn = clerkMiddleware();
 const intlMiddleware = createMiddleware(routing);
 // export default clerkMiddleware((auth) => {
 //   // 先处理Clerk的认证逻辑
@@ -11,7 +11,10 @@ const intlMiddleware = createMiddleware(routing);
 //   // 应用国际化中间件
 //   return intlMiddleware;
 // });
-export default intlMiddleware;
+export default function (...args) {
+  const res = clerkMiddlewareFn(...args);
+  return intlMiddleware(res);
+}
 export const config = {
   // Match only internationalized pathnames
   matcher: [

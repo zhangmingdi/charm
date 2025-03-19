@@ -34,7 +34,7 @@ export default async function RootLayout({
 
   const messages = await getMessages();
   return (
-    <ClerkProvider>
+    <ClerkProvider afterSignOutUrl="/">
       <html lang="en">
         <body className={inter.className}>
           <NextIntlClientProvider messages={messages}>
