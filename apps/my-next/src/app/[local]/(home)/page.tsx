@@ -1,19 +1,24 @@
-import { trpc } from "@/trpc/server";
-import { useTranslations } from "next-intl";
+import { ErrorBoundary } from "react-error-boundary";
 import { Suspense } from "react";
+import { PageClient } from "./client";
+import { HydrateClient, trpc } from "@/trpc/server";
 
-const DataComponent = async () => {
-  const data = await trpc.hello({ text: "hello1" });
-  return <div>I am going to load video {data.greeting}</div>;
-};
 
-export default function Home() {
-  const t = useTranslations("HomePage");
+
+const Page = async () =>{
+  void trpc.hello.prefetch({ text: "Antonio" });
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <Suspense fallback={<div>Loading...</div>}>
-        <DataComponent />
+     <HydrateClient>
+      <Suspense fallback={<p>Loading...</p>}>
+      <ErrorBoundary  fallback={<p>Error...</p>}>
+        <PageClient />
+      </ErrorBoundary>
       </Suspense>
+     </HydrateClient>
+
     </div>
   );
 }
+
+export default Page;

@@ -12,6 +12,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 const inter = Inter({ subsets: ["latin"] });
+import { TRPCProvider } from "@/trpc/client";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -38,7 +39,11 @@ export default async function RootLayout({
       <html lang="en">
         <body className={inter.className}>
           <NextIntlClientProvider messages={messages}>
+          <TRPCProvider>
+
             {children}
+
+          </TRPCProvider>
           </NextIntlClientProvider>
         </body>
       </html>

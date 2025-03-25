@@ -11,10 +11,7 @@ const intlMiddleware = createMiddleware(routing);
 //   // 应用国际化中间件
 //   return intlMiddleware;
 // });
-export default function (...args) {
-  const res = clerkMiddlewareFn(...args);
-  return intlMiddleware(res);
-}
+export default clerkMiddlewareFn;
 export const config = {
   // Match only internationalized pathnames
   matcher: [
