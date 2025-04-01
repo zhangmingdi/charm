@@ -29,6 +29,7 @@ export const StudioUploadModal = () => {
     create.reset();
     router.push(`/studio/videos/${create.data.video.id}`);
   };
+  console.log("!!create.data?.url", !!create.data?.url);
 
   return (
     <>

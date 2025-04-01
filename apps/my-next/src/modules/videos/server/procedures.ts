@@ -528,7 +528,6 @@ export const videosRouter = createTRPCRouter({
   //   }),
   create: protectedProcedure.mutation(async ({ ctx }) => {
     const { id: userId } = ctx.user;
-
     const upload = await mux.video.uploads.create({
       new_asset_settings: {
         passthrough: userId,
