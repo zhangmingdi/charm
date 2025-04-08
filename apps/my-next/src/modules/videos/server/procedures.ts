@@ -25,7 +25,7 @@ import {
   users,
   // videoReactions,
   videos,
-  // videoUpdateSchema,
+  videoUpdateSchema,
   // videoViews,
 } from "@/db/schema";
 
@@ -483,49 +483,49 @@ export const videosRouter = createTRPCRouter({
 
   //     return updatedVideo;
   //   }),
-  // remove: protectedProcedure
-  //   .input(z.object({ id: z.string().uuid() }))
-  //   .mutation(async ({ ctx, input }) => {
-  //     const { id: userId } = ctx.user;
+  remove: protectedProcedure
+    .input(z.object({ id: z.string().uuid() }))
+    .mutation(async ({ ctx, input }) => {
+      const { id: userId } = ctx.user;
 
-  //     const [removedVideo] = await db
-  //       .delete(videos)
-  //       .where(and(eq(videos.id, input.id), eq(videos.userId, userId)))
-  //       .returning();
+      const [removedVideo] = await db
+        .delete(videos)
+        .where(and(eq(videos.id, input.id), eq(videos.userId, userId)))
+        .returning();
 
-  //     if (!removedVideo) {
-  //       throw new TRPCError({ code: "NOT_FOUND" });
-  //     }
+      if (!removedVideo) {
+        throw new TRPCError({ code: "NOT_FOUND" });
+      }
 
-  //     return removedVideo;
-  //   }),
-  // update: protectedProcedure
-  //   .input(videoUpdateSchema)
-  //   .mutation(async ({ ctx, input }) => {
-  //     const { id: userId } = ctx.user;
+      return removedVideo;
+    }),
+  update: protectedProcedure
+    .input(videoUpdateSchema)
+    .mutation(async ({ ctx, input }) => {
+      const { id: userId } = ctx.user;
 
-  //     if (!input.id) {
-  //       throw new TRPCError({ code: "BAD_REQUEST" });
-  //     }
+      if (!input.id) {
+        throw new TRPCError({ code: "BAD_REQUEST" });
+      }
 
-  //     const [updatedVideo] = await db
-  //       .update(videos)
-  //       .set({
-  //         title: input.title,
-  //         description: input.description,
-  //         categoryId: input.categoryId,
-  //         visibility: input.visibility,
-  //         updatedAt: new Date(),
-  //       })
-  //       .where(and(eq(videos.id, input.id), eq(videos.userId, userId)))
-  //       .returning();
+      const [updatedVideo] = await db
+        .update(videos)
+        .set({
+          title: input.title,
+          description: input.description,
+          categoryId: input.categoryId,
+          visibility: input.visibility,
+          updatedAt: new Date(),
+        })
+        .where(and(eq(videos.id, input.id), eq(videos.userId, userId)))
+        .returning();
 
-  //     if (!updatedVideo) {
-  //       throw new TRPCError({ code: "NOT_FOUND" });
-  //     }
+      if (!updatedVideo) {
+        throw new TRPCError({ code: "NOT_FOUND" });
+      }
 
-  //     return updatedVideo;
-  //   }),
+      return updatedVideo;
+    }),
   create: protectedProcedure.mutation(async ({ ctx }) => {
     const { id: userId } = ctx.user;
     const upload = await mux.video.uploads.create({
