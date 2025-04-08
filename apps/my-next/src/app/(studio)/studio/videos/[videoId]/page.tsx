@@ -6,20 +6,20 @@ export const dynamic = "force-dynamic";
 
 interface PageProps {
   params: Promise<{ videoId: string }>;
-};
+}
 
 const Page = async ({ params }: PageProps) => {
   const { videoId } = await params;
 
-  // void trpc.studio.getOne.prefetch({ id: videoId });
+  void trpc.studio.getOne.prefetch({ id: videoId });
   // void trpc.categories.getMany.prefetch();
 
-  return ( 
+  return (
     <HydrateClient>
-      {/* <VideoView videoId={videoId} /> */}
+      <VideoView videoId={videoId} />
       123123
     </HydrateClient>
   );
 };
- 
+
 export default Page;

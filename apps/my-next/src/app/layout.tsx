@@ -34,17 +34,17 @@ export default async function RootLayout({
   // Providing all messages to the client
   // side is the easiest way to get started
 
-  const messages = await getMessages();
+  // const messages = await getMessages();
   return (
     <ClerkProvider afterSignOutUrl="/">
       <html lang="en">
         <body className={inter.className}>
-          <NextIntlClientProvider messages={messages}>
-            <TRPCProvider>
-              <Toaster />
-              {children}
-            </TRPCProvider>
-          </NextIntlClientProvider>
+          {/* <NextIntlClientProvider messages={messages}> */}
+          <TRPCProvider>
+            <Toaster />
+            {children}
+          </TRPCProvider>
+          {/* </NextIntlClientProvider> */}
         </body>
       </html>
     </ClerkProvider>
