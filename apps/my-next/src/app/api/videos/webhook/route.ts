@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { headers } from "next/headers";
-// import { UTApi } from "uploadthing/server";
+import { UTApi } from "uploadthing/server";
 import {
   VideoAssetCreatedWebhookEvent,
   VideoAssetErroredWebhookEvent,
