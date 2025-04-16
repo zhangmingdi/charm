@@ -21,12 +21,12 @@ import {
   protectedProcedure,
 } from "@/trpc/init";
 import {
-  // subscriptions,
+  subscriptions,
   users,
-  // videoReactions,
+  videoReactions,
   videos,
   videoUpdateSchema,
-  // videoViews,
+  videoViews,
 } from "@/db/schema";
 
 export const videosRouter = createTRPCRouter({
